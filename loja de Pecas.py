@@ -112,28 +112,28 @@ print('Bem Vindo ao Controle de Estoque da Bicicletaria do Guilherme Araújo de 
 while True:
 
     print('Escolha a opção desejada: \n1-Cadastrar Peças \n2-Consultar Peças \n3-Remover Peças \n4-Sair')
-    escolhaOpcao4390675 = input('>> ')  # É apresentado as opções acima e pede para selecionar uma delas
+    escolhaOpcao = input('>> ')  # É apresentado as opções acima e pede para selecionar uma delas
 
-    if escolhaOpcao4390675 == '1':  # Analisa a opção selecionada
+    if escolhaOpcao == '1':  # Analisa a opção selecionada
         codigo = codigo + 1  # Atualiza o código exclusivo
         print('')
         cadastrarPeca(codigo)  # Chama a função e a executa
         print('')
         continue  # Volta para o início do loop
 
-    elif escolhaOpcao4390675 == '2':
+    elif escolhaOpcao == '2':
         print('')
         consultarPeca()
         print('')
         continue
 
-    elif escolhaOpcao4390675 == '3':
+    elif escolhaOpcao == '3':
         print('')
         removerPeca()
         print('')
         continue
 
-    elif escolhaOpcao4390675 == "4":  # Analisa a opção sair e finaliza o programa no break
+    elif escolhaOpcao == "4":  # Analisa a opção sair e finaliza o programa no break
         break
 
     else:
