@@ -1,16 +1,12 @@
 listaPecas = []  # Lista criada para receber o dicionário com as peças
 codigo = 0  # Cria o código exclusivo
 
-
 # Definição das funções
-
 def cadastrarPeca(codigo):  # Definição de função para cadastrar uma nova peça
     peca = {}
-
     print('Você selecionou a Opção de Cadastrar Peça')
 
     while True:  # Cria um loop que será usado para garantir que usuário no campo "VALOR" digite um número
-
         try:
             print(f'Código da peça {codigo:03d}')  # Informa o código exclusivo da peça
             peca['codigo'] = codigo  # Armazena o código dentro do dicionário onde a peça estará
@@ -26,17 +22,15 @@ def cadastrarPeca(codigo):  # Definição de função para cadastrar uma nova pe
 
 
 def consultarPeca():  # Definição de função para consultar peça
-
     print('Você selecionou a Opção de Consultar Peças')
-
     while True:
 
         print('Escolha a opção desejada: \n1-Consultar Todas as Peças \n2-Consultar Peças por Código \n3-Consultar peças por Fabricante \n4-Retornar')
         opcaoConsulta = input('>> ')  # Pede que o usuário digite a opção desejada
 
         if opcaoConsulta == '1':  # Analisa a opção escolhida e mostra os dados desejados (peça por peça)
-
             print('-' * 24)
+            
             for peca in listaPecas:
                 print(f'Código: {peca["codigo"]} \nNome: {peca["nome"]} \nFabricante: {peca["fabricante"]} \nValor: {peca["valor"]:.2f}')
                 print('-' * 24)
@@ -45,8 +39,8 @@ def consultarPeca():  # Definição de função para consultar peça
         elif opcaoConsulta == '2':
             consultaCodigo = input('Digite o CÓDIGO da Peça: ')  # Pede que o usuário digite o parâmetro da peça
             encontrado = False
+            
             for peca in listaPecas:
-
                 if str(peca['codigo']) == consultaCodigo:  # Analisa o parâmetro das peças e imprime a compatível
                     print('-' * 24)
                     print(f'Código: {peca["codigo"]} \nNome: {peca["nome"]} \nFabricante: {peca["fabricante"]} \nValor: {peca["valor"]:.2f}')
@@ -64,8 +58,8 @@ def consultarPeca():  # Definição de função para consultar peça
             consultaFabricante = input('Digite o FABRICANTE da Peça: ').upper()
             print('-' * 34)
             encontrado = False
-            for peca in listaPecas:
 
+            for peca in listaPecas:
                 if str(peca['fabricante']) == consultaFabricante:
                     print(f'Código: {peca["codigo"]} \nNome: {peca["nome"]} \nFabricante: {peca["fabricante"]} \nValor: {peca["valor"]:.2f}')
                     print('-' * 34)
@@ -87,7 +81,6 @@ def consultarPeca():  # Definição de função para consultar peça
 
 
 def removerPeca():  # Definição de função para remover peça
-
     print('Você Selecionou a Opção de Remover Peça')
     pecaRemove = input('Digite o código da peça a ser removida: ')  # Pede que digite o código da peça a ser removida
     encontrado = False
@@ -99,6 +92,7 @@ def removerPeca():  # Definição de função para remover peça
             encontrado = True
             print('Peça removida')
             print('')
+            
     if not encontrado:  # Verifica se a peça não foi encontrada e mostra a mensagem abaixo
         print('')
         print('Peça não encontrada')
