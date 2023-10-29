@@ -1,0 +1,73 @@
+print('Bem vindo a Lanchonete do Guilherme Araújo de Barros (RU: 4390675)')
+
+print('*'*24, 'Cardápio', '*'*24)  # Impressão do menu
+print('''
+|  Código  |        Descrição         | Valor |
+|   100    |     Cachorro-Quente      |  9,00 |
+|   101    |   Cachorro-Quente Duplo  | 11,00 |
+|   102    |         X-Egg            | 12,00 |
+|   103    |        X-Salada          | 13,00 |
+|   104    |         X-Bacon          | 14,00 |
+|   105    |         X-Tudo           | 17,00 |
+|   200    |   Refrigerante Lata      |  5,00 |
+|   201    |      Chá Gelado          |  4,00 |''')
+
+total4390675 = 0
+
+while True:  # Laço de repetição para garantir que o usuário digitará corretamente
+
+    pedido = int(input('Entre com o código do pedido: '))   # Entrada onde o cliente digitará o que irá pedir
+
+    if pedido == 100:   # Verificação (usando 'if' e 'elif') do código para ver o que foi pedido
+        print('Você pediu um Cachorro-Quente no valor de R$ 9,00')  # Imprime o que foi pedido
+        total4390675 += 9.00    # Armazenamento do valor do que foi pedido
+
+    elif pedido == 101:
+        print('Você pediu um Cachorro-Quente Duplo no valor de R$ 11,00')
+        total4390675 += 11.00
+
+    elif pedido == 102:
+        print('Você pediu um X-Egg no valor de R$ 12,00')
+        total4390675 += 12.00
+
+    elif pedido == 103:
+        print('Você pediu um X-Salada no valor de R$ 13,00')
+        total4390675 += 13.00
+
+    elif pedido == 104:
+        print('Você pediu um X-Bacon no valor de R$ 14,00')
+        total4390675 += 14.00
+
+    elif pedido == 105:
+        print('Você pediu um X-Tudo no valor de R$ 17,00')
+        total4390675 += 17.00
+
+    elif pedido == 200:
+        print('Você pediu um Refrigerante Lata no valor de R$ 5,00')
+        total4390675 += 5.00
+
+    elif pedido == 201:
+        print('Você pediu um Chá Gelado no valor de R$ 4,00')
+        total4390675 += 4.00
+
+    else:   # Verificação se o cliente digitou o código errado
+        print('Opção Inválida')  # Mensagem impressa dizendo que a Opção é Inválida
+        continue
+
+    while True:  # Laço de repetição para verificar se o usuário irá pedir algo mais e garantir que digitará certo
+
+        pedir_mais = int(input('Deseja pedir mais alguma coisa? \n1 - Sim \n0 - Não \n>>'))  # Perguntar se irá pedir
+
+        if pedir_mais != 1 and pedir_mais != 0:  # Verificação se ele digitou errado
+            print('Opção Inválida')
+            continue
+
+        else:
+            break
+
+    if pedir_mais == 1:  # Se pedir algo mais volta para selecionar os pedidos
+        continue
+
+    else:  # Se não pedir mais imprime o valor total
+        print(f'O total a ser pago é R$ {total4390675:.2f}')
+        break
