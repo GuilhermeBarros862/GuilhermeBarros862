@@ -1,0 +1,34 @@
+cont100 = cont50 = cont20 = cont1 = 0
+
+saque = int(input('Digite o valor que você irá sacar: R$'))
+
+if saque < 20:
+    print('Somente poderá ser sacado valores acima de R$20.')
+else:
+    while True:
+        if saque >= 100:
+            saque -= 100
+            cont100 += 1
+            continue
+        elif 100 < saque >= 50 and saque % 20 != 0:
+            saque -= 50
+            cont50 += 1
+            continue
+        elif saque >= 20:
+            saque -= 20
+            cont20 += 1
+            continue
+        elif saque >= 1:
+            saque -= 1
+            cont1 += 1
+            continue
+        else:
+            break
+if cont1 != 0:
+    print(f'Você irá receber R${saque - cont1}')
+else:
+    print(f'Você irá receber R$ {saque} em:')
+print(f'{cont100} nota(s) de R$100')
+print(f'{cont50} nota(s) de R$50')
+print(f'{cont20} nota(s) de R$20')
+print(f'O valor de R${cont1} não está sendo entregue nem debitado de sua conta.')
