@@ -1,0 +1,28 @@
+situacao = ' '
+
+nota1 = int(input('Qual a primeira nota? '))
+nota2 = int(input('Qual a segunda nota? '))
+nota3 = int(input('Qual a terceira nota? '))
+nota4 = int(input('Qual a quarta nota? '))
+
+media = (nota1 + nota2 + nota3 + nota4) / 4
+
+if media > 70:
+    print(f'A média do aluno foi {media:.2f} e ele está Aprovado!')
+    situacao = 'Aprovado'
+elif media >= 40:
+    print(f'A média do aluno foi {media:.2f} e ele está em Exame!')
+    situacao = 'Exame'
+elif media < 40:
+    print(f'A média do aluno foi {media:.2f} e ele está Reprovado!')
+    situacao = 'Reprovado'
+
+if situacao == 'Exame':
+    nota_Exame = int(input('Qual a nota do exame? '))
+
+    media_Exame = (media + nota_Exame) / 2
+
+    if media_Exame >= 50:
+        print(f'A nova média do aluno é {media_Exame:.2f} e ele está Aprovado')
+    else:
+        print(f'A nova média do aluno é {media_Exame:.2f} e ele está Reprovado')
