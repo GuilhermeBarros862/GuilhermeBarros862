@@ -10,8 +10,8 @@ def cadastrar_componentes(codigo):  # Função para cadastrar peças
         try:  # Tratamento de erro para caso o usuário digite uma letra onde deveria ser um número
             peca['Codigo'] = codigo  # Cadastra o código exclusivo da peça
             peca['Categoria'] = str(input('Qual a CATEGORIA da peça? ')).upper()  # Cadastra as informações que foram pedidas
-            peca['Nome'] = str(input('Qual o NOME da peça? ')).upper()
             peca['Fabricante'] = str(input('Qual a FABRICANTE da peça? ')).upper()
+            peca['Nome'] = str(input('Qual o NOME da peça? (Obs.: Não digitar partes do nome que é a categoria e fabricante)')).upper()
             peca['Valor'] = float(input('Qual o VALOR da peça? '))
             peca['Quantidade'] = int(input('Qual a QUANTIDADE de peças? '))
             print(f'\nCódigo da peça = {codigo}')  # Informa o código ao usuário
