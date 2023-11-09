@@ -30,7 +30,8 @@ def consulta_de_pecas():  # Função para consultar peças
                                   '2 - Consultar por CATEGORIA e FABRICANTE\n'
                                   '3 - Consultar por NOME\n'
                                   '4 - Consultar por CÓDIGO\n'
-                                  '5 - Sair'))
+                                  '5 - Sair
+                                  '>> '))
 
         if tipo_consulta == '1':  # Verifica a opção escolhida pelo usuário
             print('-' * 24)
